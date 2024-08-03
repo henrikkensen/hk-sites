@@ -3,11 +3,13 @@
 /*
 Plugin Name: HK Sites
 Plugin URI: https://henrikkensen.se
-Description: Adds site URL to adminbar site swicher in multisite.
-Author: Henrik Kensén
 Version: 1.0
-Network: true
+Author: Henrik Kensén
+Description: Adds site URL to adminbar site swicher in multisite.
 Author URI: https://henrikkensen.se
+Network: true
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hksites
 */
 
@@ -15,14 +17,14 @@ Text Domain: hksites
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+// Remove WordPress standard my sites admin bar.
 add_action( 'admin_bar_menu', 'remove_from_admin_bar', 999 );
 function remove_from_admin_bar( $wp_admin_bar ) {
     $wp_admin_bar->remove_node('my-sites');
 }
 
-
-
-
+// Recreate my sites admin bar, add blog url to title.
 add_action( 'admin_bar_menu', 'menu_gdpr_admin', 999 );
 function menu_gdpr_admin( $wp_admin_bar ) {
 
@@ -30,7 +32,6 @@ function menu_gdpr_admin( $wp_admin_bar ) {
 	if ( ! is_user_logged_in() || ! is_multisite() ) {
 		return;
 	}
-
 	// Show only when the user has at least one site, or they're a super admin.
 	if ( count( $wp_admin_bar->user->blogs ) < 1 && ! current_user_can( 'manage_network' ) ) {
 		return;
