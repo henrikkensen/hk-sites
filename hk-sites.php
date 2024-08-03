@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: HK Sites
+Plugin Name: HK Multisite Admin Bar Swicher
 Plugin URI: https://henrikkensen.se
 Version: 1.0
 Author: Henrik Kensén
