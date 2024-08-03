@@ -6,7 +6,7 @@ Plugin URI: https://henrikkensen.se
 Version: 1.0
 Author: Henrik Kensén
 Description: Adds site URL to adminbar site swicher in multisite.
-Author URI: https://henrikkensen.se
+Author URI: https://github.com/henrikkensen/hk-sites
 Network: true
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
